@@ -1,5 +1,6 @@
 import React from 'react';
 import {fetchEpisodes} from './services/fetchRickMorty';
+import EpisodeList from './components/EpisodeList';
 import './App.css';
 
 class App extends React.Component {
@@ -27,7 +28,7 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.episodes)
+
     return (
       <div className="app">
         <header className="app__header">
@@ -35,16 +36,9 @@ class App extends React.Component {
         </header>
 
         <main className="app__main">
-          <ul className="episodes-list">
-            {this.state.episodes
-              .map(item => {
-                return (
-                  <li className="episode" key={item.id}>{item.name}</li>
-                );
-              })
-            
-            }
-          </ul>
+          <EpisodeList 
+            episodes={this.state.episodes}
+          />
         </main>
         
 
