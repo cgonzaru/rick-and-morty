@@ -1,25 +1,29 @@
 import React from 'react';
-import EpisodeCard from './EpisodeCard';
+//import EpisodeCard from './EpisodeCard';
 
 const EpisodeList = props => {
 	const { episodes } = props;
 
 	return (
-		<ul className="episodes-list">
+		<div className="episodes-list row">
 			{episodes
 				.map(item => {
 					return (
-						<li className="episode-name" key={item.id}>
-							<EpisodeCard 
-								episode={item.episode}
-								name={item.name}
-							/> 
-						</li>
+						<div className="episode-name col s4" key={item.id}>
+
+							<div className="card blue">
+								<div className="card-content">
+									<span className="card-title">{item.episode}</span>
+									<p className="episode-name">{item.name}</p>
+								</div>
+							</div>
+
+						</div>
 					);
 				})
 
 			}
-		</ul>
+		</div>
 	);
 };
 
