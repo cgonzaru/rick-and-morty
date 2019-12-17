@@ -20,17 +20,20 @@ const EpisodeDetail = props => {
 	if (episode[0]) {
 		const { name, air_date } = episode[0];
 		return (
-			<div className="row">
-				<div className="episode-name col s12 m6">
+			<div className="container">
+				<div className="row">
+					<div className="episode-name col s12">
 
-					<div className="card blue-grey">
-						<div className="card-content">
-							<p className="episode-name">Nombre de episodio: {name}</p>
-							<p className="air-date">Fecha de emisión: {air_date}</p>
+						<div className="card blue-grey">
+							<div className="card-content">
+								<p className="episode-name">Nombre de episodio: {name}</p>
+								<p className="air-date">Fecha de emisión: {air_date}</p>
+							</div>
+							<Link to={`/`} className="">
+								<p className="back white-text center-align">Volver</p>
+							</Link>
 						</div>
-						<Link to={`/`} className="">
-							<p className="back white-text">Volver</p>
-						</Link>
+
 					</div>
 				</div>
 			</div>

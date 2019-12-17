@@ -4,11 +4,24 @@ body {
 
 .header__title {
     height: 1px;
-    width: 500px;
-    margin: auto;
+    width: 400px;
+    margin: auto; 
     padding-top: 150px;
     overflow: hidden;
     background-image: url('images/logo.png');
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+.container  {
+    display: flex;
+    position: absolute;
+    top: 150px;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+  
+.container .row {
+    margin: 0 auto;
 }
