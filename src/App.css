@@ -1,0 +1,14 @@
+body {
+    background-color: black;
+}
+
+.header__title {
+    height: 1px;
+    width: 500px;
+    margin: auto;
+    padding-top: 150px;
+    overflow: hidden;
+    background-image: url('images/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
