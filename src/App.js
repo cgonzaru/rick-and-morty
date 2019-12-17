@@ -1,6 +1,8 @@
 import React from 'react';
-import {fetchEpisodes} from './services/fetchRickMorty';
+import { Switch, Route } from 'react-router-dom';
+import { fetchEpisodes } from './services/fetchRickMorty';
 import EpisodeList from './components/EpisodeList';
+import EpisodeDetail from './components/EpisodeDetail';
 import './App.css';
 
 class App extends React.Component {
@@ -11,7 +13,7 @@ class App extends React.Component {
       episodes: [],
       userInput: ''
     }
-    
+
   }
 
   componentDidMount() {
@@ -36,11 +38,32 @@ class App extends React.Component {
         </header>
 
         <main className="app__main">
-          <EpisodeList 
-            episodes={this.state.episodes}
-          />
+
+          <Switch>
+
+            <Route exact path='/' render={() => {
+              return (
+                <EpisodeList
+                  episodes={this.state.episodes}
+                />
+              );
+            }}
+            />
+
+            <Route path='/detail/:episodeId' render={ routerProps => {
+              return(
+                <EpisodeDetail 
+                  routerProps={routerProps}
+                  episodes={this.state.episodes}
+                />
+              );
+            }} 
+            />
+
+          </Switch>
+
         </main>
-        
+
 
       </div>
     );
