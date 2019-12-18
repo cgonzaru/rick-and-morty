@@ -21,12 +21,12 @@ const EpisodeList = props => {
 					return (
 						<div className="episode-name col s4" key={item.id}>
 
-							<div className="card blue">
+							<div className="card light-blue">
 								<div className="card-image">
 									<img src={t} alt="logot1" className="logo" />
 									<span className="card-title black-text">{item.episode}</span>
 									<Link to={`/detail/${item.id}`} className="">
-										<a className="btn-floating halfway-fab waves-effect waves-light red"><i className="material-icons">add</i></a>
+										<a className="btn-floating halfway-fab waves-effect waves-light yellow accent-2"><i className="material-icons black-text">add</i></a>
 									</Link>
 								</div>
 								<div className="card-content">
