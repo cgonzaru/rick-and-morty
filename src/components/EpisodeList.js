@@ -5,11 +5,13 @@ import temporada2 from '../images/temporada2.jpg';
 //import EpisodeCard from './EpisodeCard';
 
 const EpisodeList = props => {
-	const { episodes } = props;
+	const { episodes, userInput, userName } = props;
 
 	return (
 		<div className="episodes-list row">
 			{episodes
+				.filter(ep => ep.episode.toUpperCase().includes(userInput.toUpperCase()))
+				.filter(na => na.name.toUpperCase().includes(userName.toUpperCase()))
 				.map(item => {
 					const temp = item.episode.split("E");
 					let t = '';

@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { fetchEpisodes } from './services/fetchRickMorty';
 import EpisodeList from './components/EpisodeList';
 import EpisodeDetail from './components/EpisodeDetail';
+import Input from './components/Input';
 import './App.css';
 
 class App extends React.Component {
@@ -11,8 +12,12 @@ class App extends React.Component {
 
     this.state = {
       episodes: [],
-      userInput: ''
+      userInput: '',
+      userName: ''
     }
+
+    this.getUserInput = this.getUserInput.bind(this);
+    this.getUserName = this.getUserName.bind(this);
 
   }
 
@@ -29,6 +34,22 @@ class App extends React.Component {
       })
   }
 
+  getUserInput(event) {
+    const value = event.currentTarget.value;
+
+    this.setState({
+      userInput: value
+    })
+  }
+
+  getUserName(event) {
+    const value = event.currentTarget.value;
+
+    this.setState({
+      userName: value
+    })
+  }
+
   render() {
 
     return (
@@ -43,21 +64,29 @@ class App extends React.Component {
 
             <Route exact path='/' render={() => {
               return (
-                <EpisodeList
-                  episodes={this.state.episodes}
-                />
+                <Fragment>
+                  <Input
+                    getUserInput={this.getUserInput}
+                    getUserName={this.getUserName}
+                  />
+                  <EpisodeList
+                    episodes={this.state.episodes}
+                    userInput={this.state.userInput}
+                    userName={this.state.userName}
+                  />
+                </Fragment>
               );
             }}
             />
 
-            <Route path='/detail/:episodeId' render={ routerProps => {
-              return(
-                <EpisodeDetail 
+            <Route path='/detail/:episodeId' render={routerProps => {
+              return (
+                <EpisodeDetail
                   routerProps={routerProps}
                   episodes={this.state.episodes}
                 />
               );
-            }} 
+            }}
             />
 
           </Switch>
