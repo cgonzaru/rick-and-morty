@@ -5,7 +5,7 @@ import temporada1 from '../images/temporada1.jpg';
 import temporada2 from '../images/temporada2.jpg';
 
 const EpisodeList = props => {
-	const { episodes, userInput, userName } = props;
+	const { episodes, userInput, userName, reset } = props;
 
 	return (
 		<div className="episodes-list row">
@@ -27,7 +27,7 @@ const EpisodeList = props => {
 								<div className="card-image">
 									<img src={t} alt="logot1" className="logo" />
 									<span className="card-title black-text">{item.episode}</span>
-									<Link to={`/detail/${item.id}`} className="detail">
+									<Link to={`/detail/${item.id}`} className="detail" onClick={reset}>
 										<a className="btn-floating halfway-fab waves-effect waves-light yellow accent-2"><i className="material-icons black-text">add</i></a>
 									</Link>
 								</div>
@@ -48,7 +48,8 @@ const EpisodeList = props => {
 EpisodeList.propTypes = {
 	episodes: PropTypes.arrayOf(PropTypes.object).isRequired,
 	userInput: PropTypes.string.isRequired,
-	userName: PropTypes.string.isRequired
+	userName: PropTypes.string.isRequired,
+	reset: PropTypes.func.isRequired
 };
 
 export default EpisodeList;

@@ -9,9 +9,19 @@ const EpisodeDetail = props => {
 
 	if (episodeId > episodes.length) {
 		return (
-			<div>
-				<p>El número del detalle excede del número de episodios.</p>
-				<Link to='/' className="back">Vuelve al listado de episodios.</Link>
+			<div className="container">
+				<div className="row">
+					<div className="episode-name col s12">
+						<div className="card blue-grey">
+							<div className="card-content">
+								<p className="black-text">El número del detalle excede del número de episodios.</p>
+							</div>
+							<Link to={`/`} className="">
+								<p className="back white-text center-align" onClick={reset}>Volver</p>
+							</Link>
+						</div>
+					</div>
+				</div>
 			</div>
 		);
 	}
@@ -44,7 +54,8 @@ const EpisodeDetail = props => {
 
 EpisodeDetail.propTypes = {
 	routerProps: PropTypes.object.isRequired,
-	episodes: PropTypes.arrayOf(PropTypes.object).isRequired
+	episodes: PropTypes.arrayOf(PropTypes.object).isRequired,
+	reset: PropTypes.func.isRequired
 };
 
 export default EpisodeDetail;

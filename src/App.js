@@ -52,6 +52,7 @@ class App extends React.Component {
   }
 
   reset() {
+    window.scrollTo(0, 0);
     this.setState({
       userInput: '',
       userName: ''
@@ -81,6 +82,7 @@ class App extends React.Component {
                     episodes={this.state.episodes}
                     userInput={this.state.userInput}
                     userName={this.state.userName}
+                    reset={this.reset}
                   />
                 </Fragment>
               );
