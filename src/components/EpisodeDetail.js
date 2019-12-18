@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const EpisodeDetail = props => {
@@ -39,6 +40,11 @@ const EpisodeDetail = props => {
 			</div>
 		);
 	}
+};
+
+EpisodeDetail.propTypes = {
+	routerProps: PropTypes.object.isRequired,
+	episodes: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 export default EpisodeDetail;

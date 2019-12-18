@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import temporada1 from '../images/temporada1.jpg';
 import temporada2 from '../images/temporada2.jpg';
 //import EpisodeCard from './EpisodeCard';
@@ -27,7 +28,7 @@ const EpisodeList = props => {
 								<div className="card-image">
 									<img src={t} alt="logot1" className="logo" />
 									<span className="card-title black-text">{item.episode}</span>
-									<Link to={`/detail/${item.id}`} className="">
+									<Link to={`/detail/${item.id}`} className="detail">
 										<a className="btn-floating halfway-fab waves-effect waves-light yellow accent-2"><i className="material-icons black-text">add</i></a>
 									</Link>
 								</div>
@@ -43,6 +44,12 @@ const EpisodeList = props => {
 			}
 		</div>
 	);
+};
+
+EpisodeList.propTypes = {
+	episodes: PropTypes.arrayOf(PropTypes.object).isRequired,
+	userInput: PropTypes.string.isRequired,
+	userName: PropTypes.string.isRequired
 };
 
 export default EpisodeList;

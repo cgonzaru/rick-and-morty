@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Input = props => {
     const { getUserInput, getUserName } = props;
@@ -17,6 +18,11 @@ const Input = props => {
             </div>
         </div>
     );
+};
+
+Input.propTypes = {
+    getUserInput: PropTypes.func.isRequired,
+    getUserName: PropTypes.func.isRequired
 };
 
 export default Input;
