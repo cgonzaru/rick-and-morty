@@ -93,6 +93,9 @@ class App extends React.Component {
 
         </main>
 
+        <footer class="page-footer light-blue black-text">
+            © 2019 Cristina González Rubio
+        </footer>
 
       </div>
     );
