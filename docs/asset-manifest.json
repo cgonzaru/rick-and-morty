@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "./static/css/main.e1b9924c.chunk.css",
+    "main.js": "./static/js/main.72ca8169.chunk.js",
+    "main.js.map": "./static/js/main.72ca8169.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.95cf79bc.js",
+    "runtime-main.js.map": "./static/js/runtime-main.95cf79bc.js.map",
+    "static/js/2.2a1c852e.chunk.js": "./static/js/2.2a1c852e.chunk.js",
+    "static/js/2.2a1c852e.chunk.js.map": "./static/js/2.2a1c852e.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.53650975fe19757ad55841dbc7165e37.js": "./precache-manifest.53650975fe19757ad55841dbc7165e37.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.e1b9924c.chunk.css.map": "./static/css/main.e1b9924c.chunk.css.map",
+    "static/js/2.2a1c852e.chunk.js.LICENSE": "./static/js/2.2a1c852e.chunk.js.LICENSE",
+    "static/media/App.css": "./static/media/logo.75509f2e.png",
+    "static/media/temporada1.jpg": "./static/media/temporada1.36297dfd.jpg",
+    "static/media/temporada2.jpg": "./static/media/temporada2.c257dbe9.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.95cf79bc.js",
+    "static/js/2.2a1c852e.chunk.js",
+    "static/css/main.e1b9924c.chunk.css",
+    "static/js/main.72ca8169.chunk.js"
+  ]
+}
