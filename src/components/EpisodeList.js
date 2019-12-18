@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import temporada1 from '../images/temporada1.jpg';
 import temporada2 from '../images/temporada2.jpg';
-//import EpisodeCard from './EpisodeCard';
 
 const EpisodeList = props => {
 	const { episodes, userInput, userName } = props;

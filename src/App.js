@@ -18,6 +18,7 @@ class App extends React.Component {
 
     this.getUserInput = this.getUserInput.bind(this);
     this.getUserName = this.getUserName.bind(this);
+    this.reset = this.reset.bind(this);
 
   }
 
@@ -47,6 +48,13 @@ class App extends React.Component {
 
     this.setState({
       userName: value
+    })
+  }
+
+  reset() {
+    this.setState({
+      userInput: '',
+      userName: ''
     })
   }
 
@@ -84,6 +92,7 @@ class App extends React.Component {
                 <EpisodeDetail
                   routerProps={routerProps}
                   episodes={this.state.episodes}
+                  reset={this.reset}
                 />
               );
             }}
@@ -92,10 +101,6 @@ class App extends React.Component {
           </Switch>
 
         </main>
-
-        <footer class="page-footer light-blue black-text">
-            © 2019 Cristina González Rubio
-        </footer>
 
       </div>
     );

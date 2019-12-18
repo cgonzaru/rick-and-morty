@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const EpisodeDetail = props => {
 
-	const { routerProps, episodes } = props;
+	const { routerProps, episodes, reset } = props;
 	const episodeId = parseInt(routerProps.match.params.episodeId);
 
 	if (episodeId > episodes.length) {
@@ -31,7 +31,7 @@ const EpisodeDetail = props => {
 								<p className="air-date">Fecha de emisión: {air_date}</p>
 							</div>
 							<Link to={`/`} className="">
-								<p className="back white-text center-align">Volver</p>
+								<p className="back white-text center-align" onClick={reset}>Volver</p>
 							</Link>
 						</div>
 
